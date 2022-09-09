@@ -13,15 +13,29 @@ const SignIn = () => {
 
   const { email, password } = formData;
   const navigate = useNavigate();
+  const onChange =()=>{
+
+  }
   return (
     <>
       <div className="pagecontainer">
         <header>
           <p className="pageHeader">Welcome Back!</p>
         </header>
-        <main>
-          
-        </main>
+        <form>
+          <input
+            type="email"
+            className="emailInput"
+            placeholder="Email"
+            value={email}
+            onChange={onChange}
+          />
+          <div className=" passwordInputDiv">
+            <input type={showPassword ? 'text': 'password'} 
+            className='password'/>
+          </div>
+
+        </form>
       </div>
     </>
   );
