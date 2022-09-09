@@ -19,8 +19,9 @@ function App() {
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
         </Routes>
+        <NavBar />
       </Router>
-      <NavBar />
+     
     </>
   );
 }

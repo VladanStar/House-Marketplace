@@ -7,20 +7,37 @@ import { ReactComponent as PersonOutlineIcon } from "../assets/svg/personOutline
 function NavBar() {
   const navigate = useNavigate();
   const location = useLocation();
+  const pathMatchroute = (route) => {
+    if (route === location.pathname) {
+      return true;
+    }
+  };
   return (
     <footer className="navbar">
       <nav className="navbarNav">
         <ul className="navbarListItems">
           <li className="navbarListItem" onClick={() => navigate("/")}>
-            <ExporeIcon fill="#2c2c2c" width="36px" height="36px" />
+            <ExporeIcon
+              fill={pathMatchroute("/") ? "#2c2c2c" : "#8f8f8f"}
+              width="36px"
+              height="36px"
+            />
             <p>Explore</p>
           </li>
           <li className="navbarListItem" onClick={() => navigate("/offers")}>
-            <OfferIcon fill="#2c2c2c" width="36px" height="36px" />
+            <OfferIcon
+              fill={pathMatchroute("/") ? "#2c2c2c" : "#8f8f8f"}
+              width="36px"
+              height="36px"
+            />
             <p>Offer</p>
           </li>
           <li className="navbarListItem" onClick={() => navigate("/profile")}>
-            <PersonOutlineIcon fill="#2c2c2c" width="36px" height="36px" />
+            <PersonOutlineIcon
+              fill={pathMatchroute("/") ? "#2c2c2c" : "#8f8f8f"}
+              width="36px"
+              height="36px"
+            />
             <p>PersonOutline</p>
           </li>
         </ul>
