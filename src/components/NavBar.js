@@ -7,7 +7,7 @@ import { ReactComponent as PersonOutlineIcon } from "../assets/svg/personOutline
 function NavBar() {
   const navigate = useNavigate();
   const location = useLocation();
-  const pathMatchroute = (route) => {
+  const pathMatchRoute = (route) => {
     if (route === location.pathname) {
       return true;
     }
@@ -18,27 +18,51 @@ function NavBar() {
         <ul className="navbarListItems">
           <li className="navbarListItem" onClick={() => navigate("/")}>
             <ExporeIcon
-              fill={pathMatchroute("/") ? "#2c2c2c" : "#8f8f8f"}
+              fill={pathMatchRoute("/") ? "#2c2c2c" : "#8f8f8f"}
               width="36px"
               height="36px"
             />
-            <p>Explore</p>
+            <p
+              className={
+                pathMatchRoute("/")
+                  ? "navbarListItemNameActive"
+                  : "navbarListItemName"
+              }
+            >
+              Explore
+            </p>
           </li>
           <li className="navbarListItem" onClick={() => navigate("/offers")}>
             <OfferIcon
-              fill={pathMatchroute("/") ? "#2c2c2c" : "#8f8f8f"}
+              fill={pathMatchRoute("/offers") ? "#2c2c2c" : "#8f8f8f"}
               width="36px"
               height="36px"
             />
-            <p>Offer</p>
+            <p
+              className={
+                pathMatchRoute("/offers")
+                  ? "navbarListItemNameActive"
+                  : "navbarListItemName"
+              }
+            >
+              Offer
+            </p>
           </li>
           <li className="navbarListItem" onClick={() => navigate("/profile")}>
             <PersonOutlineIcon
-              fill={pathMatchroute("/") ? "#2c2c2c" : "#8f8f8f"}
+              fill={pathMatchRoute("/profile") ? "#2c2c2c" : "#8f8f8f"}
               width="36px"
               height="36px"
             />
-            <p>PersonOutline</p>
+            <p
+              className={
+                pathMatchRoute("/profile")
+                  ? "navbarListItemNameActive"
+                  : "navbarListItemName"
+              }
+            >
+              PersonOutline
+            </p>
           </li>
         </ul>
       </nav>
