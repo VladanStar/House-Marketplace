@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ReactComponent as ArrowrightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
+import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
 
 const SignIn = () => {
@@ -13,7 +13,12 @@ const SignIn = () => {
 
   const { email, password } = formData;
   const navigate = useNavigate();
-  const onChange = () => {};
+  const onChange = (e) => {
+setFormData((prevState)=>({
+  ...prevState,
+  [e.target.value]:e.target.value
+}))
+  };
   return (
     <>
       <div className="pagecontainer">
@@ -59,6 +64,10 @@ const SignIn = () => {
 
           </div>
         </form>
+<Link  to='/sign-up' className="registerLink">
+  Sign UP Instead
+</Link>
+
       </div>
     </>
   );
