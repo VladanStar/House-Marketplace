@@ -13,9 +13,7 @@ const SignIn = () => {
 
   const { email, password } = formData;
   const navigate = useNavigate();
-  const onChange =()=>{
-
-  }
+  const onChange = () => {};
   return (
     <>
       <div className="pagecontainer">
@@ -31,20 +29,22 @@ const SignIn = () => {
             onChange={onChange}
           />
           <div className=" passwordInputDiv">
-            <input type={showPassword ? 'text': 'password'} 
-            className='passwordInput' placeholder="Password"
-            id="password"
-            value={password}
-            onChange={onChange} />
-          </div>
-          <img
-          src={visibilityIcon}
-          alt="show password"
-           className="showPassword"
-           onClick={()=> setShowPassword((prevState) =>
-            !prevState)} 
-          />
+            <input
+              type={showPassword ? "text" : "password"}
+              className="passwordInput"
+              placeholder="Password"
+              id="password"
+              value={password}
+              onChange={onChange}
+            />
 
+            <img
+              src={visibilityIcon}
+              alt="show password"
+              className="showPassword"
+              onClick={() => setShowPassword((prevState) => !prevState)}
+            />
+          </div>
         </form>
       </div>
     </>
