@@ -21,7 +21,7 @@ setFormData((prevState)=>({
   };
   return (
     <>
-      <div className="pagecontainer">
+      <div className="pageContainer">
         <header>
           <p className="pageHeader">Welcome Back!</p>
         </header>
