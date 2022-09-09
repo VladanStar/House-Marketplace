@@ -32,8 +32,18 @@ const SignIn = () => {
           />
           <div className=" passwordInputDiv">
             <input type={showPassword ? 'text': 'password'} 
-            className='password'/>
+            className='passwordInput' placeholder="Password"
+            id="password"
+            value={password}
+            onChange={onChange} />
           </div>
+          <img
+          src={visibilityIcon}
+          alt="show password"
+           className="showPassword"
+           onClick={()=> setShowPassword((prevState) =>
+            !prevState)} 
+          />
 
         </form>
       </div>
