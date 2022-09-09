@@ -4,15 +4,17 @@ import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
 
-const SignIn = () => {
+const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
+    name:"",
     email: "",
     password: "",
   });
 
-  const { email, password } = formData;
+  const { name, email, password } = formData;
   const navigate = useNavigate();
+
   const onChange = (e) => {
 setFormData((prevState)=>({
   ...prevState,
@@ -26,10 +28,19 @@ setFormData((prevState)=>({
           <p className="pageHeader">Welcome Back!</p>
         </header>
         <form>
+        <input
+            type="text"
+            className="nameInput"
+            placeholder="Name"
+            id="name"
+            value={name}
+            onChange={onChange}
+          />
           <input
             type="email"
             className="emailInput"
             placeholder="Email"
+            id="email"
             value={email}
             onChange={onChange}
           />
@@ -53,19 +64,19 @@ setFormData((prevState)=>({
           <Link to="/forgot-password" className="forgotPasswordLink">
             Forgot Password
           </Link>
-          <div className="signInBar">
-            <p className="signInText">
-              Sign In
+          <div className="signUpBar">
+            <p className="signUpText">
+              Sign Up
             </p>
-            <button className="signInButton">
+            <button className="signUpButton">
                 <ArrowRightIcon fill='#ffffff' width='34px'
                 height ='34px' />
             </button>
 
           </div>
         </form>
-<Link  to='/sign-up' className="registerLink">
-  Sign UP Instead
+<Link  to='/sign-in' className="registerLink">
+  Sign In Instead
 </Link>
 
       </div>
@@ -73,4 +84,4 @@ setFormData((prevState)=>({
   );
 };
 
-export default SignIn;
+export default SignUp;
