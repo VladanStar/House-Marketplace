@@ -36,6 +36,16 @@ const SignUp = () => {
         email,
         password
       );
+
+
+      const user = userCredential.user;
+
+
+      updateProfile(auth.currentUser, {
+        displayName:name
+      })
+
+      navigate('/')
     } catch (error) {
       console.log(error);
     }
