@@ -14,7 +14,7 @@ const SignIn = () => {
   const { email, password } = formData;
   const navigate = useNavigate();
 
-  
+
   const onChange = (e) => {
 setFormData((prevState)=>({
   ...prevState,
@@ -52,7 +52,8 @@ setFormData((prevState)=>({
               onClick={() => setShowPassword((prevState) => !prevState)}
             />
           </div>
-          <Link to="/forgot-password" className="forgotPasswordLink">
+          <Link to="/forgot-password"
+           className="forgotPasswordLink">
             Forgot Password
           </Link>
           <div className="signInBar">
